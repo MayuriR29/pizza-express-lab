@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 app.use(bodyParser());
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 let pizzas = [
   {
     id: "1",
@@ -44,7 +44,6 @@ app.put("/pizzas/:id", (req, res) => {
 });
 //delete
 app.delete("/pizzas/:id", (req, res) => {
-  
   pizzas = pizzas.filter(pizza => pizza.id !== req.params.id);
   res.send(pizzas);
 });
