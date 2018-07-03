@@ -49,7 +49,7 @@ test("TEST PUT pizza to return updated pizza", async () => {
   expect(response.body).toMatchObject(TESTDATA);
 });
 test("TEST DELETE pizza to return updated array", async () => {
-    const response=await request(app).delete("/pizzas/2");
-    expect(response.status).toEqual(200);
-    expect(response.body).toEqual("Pizza is deleted");
+  const response = await request(app).delete("/pizzas/2");
+  expect(response.status).toEqual(200);
+  expect(response.body).toEqual("Pizza is deleted");
 });
